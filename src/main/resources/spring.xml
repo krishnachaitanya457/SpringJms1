@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+	<property name="defaultDestination" ref="defaultDestination"></property>
+	 <property name="connectionFactory" ref="connectionFactory"></property>
+</bean>
+<bean id="defaultDestination" class="org.apache.activemq.command.ActiveMQQueue" >
+	<constructor-arg value="chaitanya"></constructor-arg>
+</bean>
+<bean id="connectionFactory" class=" org.apache.activemq.ActiveMQConnectionFactory">
+	<property name="brokerURL" value="tcp://krishnachaitany:61616"></property>
+</bean>
+
+</beans>
